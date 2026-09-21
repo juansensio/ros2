@@ -12,9 +12,17 @@ class TemperatureMonitor(Node):
             self.temperature_callback,
             10,
         )
+        self.declare_parameter("warning_threshold", 25.0)
 
     def temperature_callback(self, message):
-        self.get_logger().info(f"Received: {message.data:.2f} °C")
+        threshold = self.get_parameter("warning_threshold").value
+        if message.data >= threshold:
+            self.get_logger().warning(
+                f"HIGH TEMPERATURE: {message.data:.2f} °C "
+                f"(threshold: {threshold:.2f} °C)"
+            )
+        else:
+            self.get_logger().info(f"Temperature: {message.data:.2f} °C")
 
 
 def main(args=None):
