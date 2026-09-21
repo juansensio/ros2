@@ -11,9 +11,9 @@ logs:
 	docker compose logs -f
 
 bash:
-	docker exec -it ros2-jazzy bash -c "\
-		source /opt/ros/jazzy/setup.bash && \
+	docker exec -it ros2-jazzy zsh -c "\
+		source /opt/ros/jazzy/setup.zsh && \
 		cd /root/ros2_ws && \
-		source install/setup.bash && \
-		exec bash \
+		source install/setup.zsh && \
+		exec zsh \
 	"

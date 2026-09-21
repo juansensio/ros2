@@ -6,7 +6,23 @@
 - creation of a package
 - creation of a node with python
 - creation of a parameters, and change them at runtime
+- creation of a service, and call it from a client
 - basice cli commands
+
+```
+sensor_publisher
+      │
+      │ TOPIC: /temperature
+      ▼
+temperature_monitor
+      │
+      ├── PARAMETER: warning_threshold
+      │
+      └── SERVICE: set_warnings_enabled
+                       ▲
+                       │ request / response
+                 warning_client
+```
 
 ## Issues
 

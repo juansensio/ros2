@@ -25,6 +25,7 @@ setup(
         "console_scripts": [
             "sensor_publisher = ros2_basics.sensor_publisher:main",
             "temperature_monitor = ros2_basics.temperature_monitor:main",
+            "warning_client = ros2_basics.warning_client:main",
         ],
     },
 )
