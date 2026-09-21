@@ -1,4 +1,3 @@
-version: "3.8"
 services:
   ros2-jazzy:
     image: ros:jazzy
