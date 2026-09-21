@@ -1,0 +1,12 @@
+version: "3.8"
+services:
+  ros2-jazzy:
+    image: ros:jazzy
+    container_name: ros2-jazzy
+    hostname: ros2-jazzy
+    volumes:
+      - ./ros2_ws:/root/ros2_ws
+    working_dir: /root/ros2_ws
+    command: sleep infinity
+    tty: true
+    stdin_open: true
