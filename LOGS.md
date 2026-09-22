@@ -14,6 +14,8 @@
 publisher    monitor
 ```
 
+- Recording and replaying data (really cool! can record sensor and the play with controls and only tempetrature monitor node running): https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html
+
 ## Issues
 
 - types: https://docs.ros.org/en/jazzy/Concepts/Basic/About-Interfaces.html
@@ -23,6 +25,7 @@ publisher    monitor
 - updating parameters with `self.set_parameters([new_param])`.
 - launch files are in `launch/` folder, and are executed with `ros2 launch <package> <launch_file>`.
 - add launch files to `setup.py` with `glob("launch/*.launch.py")`.
+- create `bag_files` folder to store the recorded bags.
 
 # Day 1
 
