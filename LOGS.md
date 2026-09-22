@@ -39,6 +39,8 @@ Is the QoS compatible?
 Is the callback / logic correct?
 ```   
 
+- Assignment: created 3 nodes (sensor, processor, monitor) with 2 topics using custom message. Launched them in a single launch file. Recorded the data and played it back with only the monitor node running.
+
 ## Issues
 
 - types: https://docs.ros.org/en/jazzy/Concepts/Basic/About-Interfaces.html
@@ -49,6 +51,8 @@ Is the callback / logic correct?
 - launch files are in `launch/` folder, and are executed with `ros2 launch <package> <launch_file>`.
 - add launch files to `setup.py` with `glob("launch/*.launch.py")`.
 - create `bag_files` folder to store the recorded bags.
+- can pass multiple argument to `ros2 bag record` to record multiple topics.
+- can pass `-o <bag_file_name>` to specify the bag file name.
 - `ros2 topic info <topic_name> --verbose` to check the QoS policy.
 
 # Day 1
