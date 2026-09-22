@@ -39,7 +39,7 @@ Is the QoS compatible?
 Is the callback / logic correct?
 ```   
 
-- Assignment: created 3 nodes (sensor, processor, monitor) with 2 topics using custom message. Launched them in a single launch file. Recorded the data and played it back with only the monitor node running.
+- Assignment: created 3 nodes (sensor, processor, monitor) with 2 topics using custom message. Launched them in a single launch file with arguments. Recorded the data and played it back with only the monitor node running.
 
 ## Issues
 
