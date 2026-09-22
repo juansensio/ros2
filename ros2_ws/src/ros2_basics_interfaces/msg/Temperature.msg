@@ -1,0 +1,3 @@
+string sensor_id
+float64 temperature
+builtin_interfaces/Time timestamp

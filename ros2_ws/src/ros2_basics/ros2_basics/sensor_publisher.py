@@ -1,16 +1,17 @@
 import random
 import rclpy
 from rclpy.node import Node
-from std_msgs.msg import Float32
+
+from ros2_basics_interfaces.msg import Temperature
 
 
 class SensorPublisher(Node):
     def __init__(self):
         super().__init__("sensor_publisher")
         self.publisher = self.create_publisher(
-            Float32,
+            Temperature,
             "/temperature",
-            10,
+            10,  # the “queue size” is 10. limits the amount of queued messages if a subscriber is not receiving them fast enough.
         )
         self.timer = self.create_timer(
             1.0,
@@ -18,10 +19,12 @@ class SensorPublisher(Node):
         )
 
     def publish_temperature(self):
-        message = Float32()
-        message.data = random.uniform(18.0, 30.0)
+        message = Temperature()
+        message.sensor_id = "sensor_1"
+        message.timestamp = self.get_clock().now().to_msg()
+        message.temperature = random.uniform(18.0, 30.0)
         self.publisher.publish(message)
-        self.get_logger().info(f"Temperature: {message.data:.2f} °C")
+        self.get_logger().info(f"Temperature: {message.temperature:.2f} °C")
 
 
 def main(args=None):

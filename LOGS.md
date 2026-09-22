@@ -1,3 +1,29 @@
+# Day 2
+
+## Goals
+
+- Implement custom message and service types: https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Single-Package-Define-And-Use-Interface.html, https://docs.ros.org/en/jazzy/Tutorials/Beginner-Client-Libraries/Custom-ROS2-Interfaces.html
+- Launching https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Launch/Creating-Launch-Files.html
+
+```
+   temperature.launch.py
+            │
+    LaunchDescription
+      ┌────┴────┐
+      ▼         ▼
+publisher    monitor
+```
+
+## Issues
+
+- types: https://docs.ros.org/en/jazzy/Concepts/Basic/About-Interfaces.html
+- remember to run `source install/setup.zsh` after `colcon build --symlink-install` to source the installed packages.
+- can build only one package with `colcon build --symlink-install --packages-select <package>`.
+- `message.timestamp = self.get_clock().now().to_msg()` to convert the timestamp to a message.
+- updating parameters with `self.set_parameters([new_param])`.
+- launch files are in `launch/` folder, and are executed with `ros2 launch <package> <launch_file>`.
+- add launch files to `setup.py` with `glob("launch/*.launch.py")`.
+
 # Day 1
 
 ## Basics
