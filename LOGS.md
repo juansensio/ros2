@@ -23,6 +23,22 @@ Service -> short request + response
 Action  -> objective that takes time + feedback + result + cancellation
 ```
 
+- Debugging
+
+```
+"Not receiving messages"
+        ↓
+Do the nodes exist?
+        ↓
+Is the topic correct?
+        ↓
+Is the message type correct?
+        ↓
+Is the QoS compatible?
+        ↓
+Is the callback / logic correct?
+```   
+
 ## Issues
 
 - types: https://docs.ros.org/en/jazzy/Concepts/Basic/About-Interfaces.html
