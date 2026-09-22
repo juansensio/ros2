@@ -15,6 +15,13 @@ publisher    monitor
 ```
 
 - Recording and replaying data (really cool! can record sensor and the play with controls and only tempetrature monitor node running): https://docs.ros.org/en/jazzy/Tutorials/Beginner-CLI-Tools/Recording-And-Playing-Back-Data/Recording-And-Playing-Back-Data.html
+- Actions: https://docs.ros.org/en/jazzy/Tutorials/Intermediate/Writing-an-Action-Server-Client/Py.html
+
+```
+Topic   -> continuous flow of data
+Service -> short request + response
+Action  -> objective that takes time + feedback + result + cancellation
+```
 
 ## Issues
 

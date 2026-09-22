@@ -34,6 +34,7 @@ setup(
             "sensor_publisher = ros2_basics.sensor_publisher:main",
             "temperature_monitor = ros2_basics.temperature_monitor:main",
             "warning_client = ros2_basics.warning_client:main",
+            "fibonacci_action_server = ros2_basics.fibonacci_action_server:main",
         ],
     },
 )

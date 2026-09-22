@@ -18,4 +18,7 @@ alias r2br='ros2 bag record'
 alias r2bi='ros2 bag info'
 alias r2bp='ros2 bag play'
 alias r2tl='ros2 topic list'
+alias r2al='ros2 action list'
+alias r2ai='ros2 action info'
+alias r2asg='ros2 action send_goal'
 EOF
