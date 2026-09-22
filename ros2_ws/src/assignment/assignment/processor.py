@@ -19,6 +19,7 @@ class Processor(Node):
             self.processing_callback,
             qos,
         )
+        self.declare_parameter("offset", 1)
         self.publisher = self.create_publisher(
             Temperature,
             "/temperature/processed",
@@ -30,8 +31,9 @@ class Processor(Node):
         processed_message = Temperature()
         processed_message.sensor_id = message.sensor_id
         processed_message.timestamp = message.timestamp
-        processed_message.temperature = message.temperature * 1.1
-        self.publisher.publish(processed_message)
+        processed_message.temperature = (
+            message.temperature + self.get_parameter("offset").value
+        )
         self.get_logger().info(
             f"Processed temperature: {processed_message.temperature:.2f} °C"
         )

@@ -49,6 +49,8 @@ Is the callback / logic correct?
 - `message.timestamp = self.get_clock().now().to_msg()` to convert the timestamp to a message.
 - updating parameters with `self.set_parameters([new_param])`.
 - launch files are in `launch/` folder, and are executed with `ros2 launch <package> <launch_file>`.
+- pass arguments to launch with `ros2 launch <package> <launch_file> <parameter_name>:=<parameter_value>`.
+- list arguments with `ros2 launch <package> <launch_file> --show-args`.
 - add launch files to `setup.py` with `glob("launch/*.launch.py")`.
 - create `bag_files` folder to store the recorded bags.
 - can pass multiple argument to `ros2 bag record` to record multiple topics.
