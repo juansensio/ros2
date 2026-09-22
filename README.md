@@ -22,3 +22,4 @@ In the future, installing ROS 2 Jazz on Ubuntu 24.04 LTS.
 
 - https://docs.ros.org/en/jazzy
 - https://github.com/MOGI-ROS/Week-1-2-Introduction-to-ROS2
+- https://youtu.be/HJAE5Pk8Nyw?si=bem_82hjSvZUDvLD

@@ -23,3 +23,12 @@ RUN sed -i 's/plugins=(git)/plugins=(\n  git\n  zsh-autosuggestions\n  zsh-synta
 
 # Set zsh as default shell
 RUN chsh -s $(which zsh) root
+
+# alias
+RUN echo "alias c='clear'" >> /root/.zshrc
+RUN echo "alias r2='ros2'" >> /root/.zshrc
+RUN echo "alias r2r='ros2 run'" >> /root/.zshrc
+RUN echo "alias r2i='ros2 info'" >> /root/.zshrc
+RUN echo "alias rb='rm -rf build install log'" >> /root/.zshrc
+RUN echo "alias cb='colcon build --symlink-install'" >> /root/.zshrc
+RUN echo "alias si='source install/setup.zsh'" >> /root/.zshrc
