@@ -18,6 +18,9 @@ def generate_launch_description():
                 package="assignment",
                 executable="sensor",
                 output="screen",
+                remappings=[
+                    ("/temperature/raw", "/temperature/raw"),
+                ],
             ),
             Node(
                 package="assignment",
@@ -26,11 +29,18 @@ def generate_launch_description():
                 parameters=[
                     {"offset": LaunchConfiguration("offset")},
                 ],
+                remappings=[
+                    ("/temperature/raw", "/temperature/raw"),
+                    ("/temperature/processed", "/temperature/processed"),
+                ],
             ),
             Node(
                 package="assignment",
                 executable="monitor",
                 output="screen",
+                remappings=[
+                    ("/temperature/processed", "/temperature/processed"),
+                ],
             ),
         ]
     )
