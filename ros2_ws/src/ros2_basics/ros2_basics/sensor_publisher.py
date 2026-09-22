@@ -1,6 +1,7 @@
 import random
 import rclpy
 from rclpy.node import Node
+from rclpy.qos import QoSProfile, ReliabilityPolicy
 
 from ros2_basics_interfaces.msg import Temperature
 
@@ -8,10 +9,16 @@ from ros2_basics_interfaces.msg import Temperature
 class SensorPublisher(Node):
     def __init__(self):
         super().__init__("sensor_publisher")
+        qos = QoSProfile(
+            depth=10,
+            # reliability=ReliabilityPolicy.BEST_EFFORT, # if the publisher has a different reliability policy, the subscriber will not receive the messages
+            reliability=ReliabilityPolicy.RELIABLE,
+        )
         self.publisher = self.create_publisher(
             Temperature,
             "/temperature",
-            10,  # the “queue size” is 10. limits the amount of queued messages if a subscriber is not receiving them fast enough.
+            # 10,  # the “queue size” is 10. limits the amount of queued messages if a subscriber is not receiving them fast enough.
+            qos,
         )
         self.timer = self.create_timer(
             1.0,

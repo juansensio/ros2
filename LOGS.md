@@ -23,7 +23,7 @@ Service -> short request + response
 Action  -> objective that takes time + feedback + result + cancellation
 ```
 
-- Debugging
+- QoS & Debugging
 
 ```
 "Not receiving messages"
@@ -49,6 +49,7 @@ Is the callback / logic correct?
 - launch files are in `launch/` folder, and are executed with `ros2 launch <package> <launch_file>`.
 - add launch files to `setup.py` with `glob("launch/*.launch.py")`.
 - create `bag_files` folder to store the recorded bags.
+- `ros2 topic info <topic_name> --verbose` to check the QoS policy.
 
 # Day 1
 

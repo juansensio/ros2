@@ -1,6 +1,7 @@
 import rclpy
 from rclpy.node import Node
 from std_srvs.srv import SetBool
+from rclpy.qos import QoSProfile, ReliabilityPolicy
 
 from ros2_basics_interfaces.msg import Temperature
 from ros2_basics_interfaces.srv import SetThreshold
@@ -9,11 +10,15 @@ from ros2_basics_interfaces.srv import SetThreshold
 class TemperatureMonitor(Node):
     def __init__(self):
         super().__init__("temperature_monitor")
+        qos = QoSProfile(
+            depth=10,
+            reliability=ReliabilityPolicy.RELIABLE,  # if the publisher is not reliable, the subscriber will not receive the messages
+        )
         self.subscription = self.create_subscription(
             Temperature,
             "/temperature",
             self.temperature_callback,
-            10,
+            qos,
         )
         self.declare_parameter("warning_threshold", 25.0)
         self.warnings_enabled = True
