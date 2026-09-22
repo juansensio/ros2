@@ -37,6 +37,7 @@ class Processor(Node):
         self.get_logger().info(
             f"Processed temperature: {processed_message.temperature:.2f} °C"
         )
+        self.publisher.publish(processed_message)
 
 
 def main(args=None):
