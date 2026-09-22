@@ -32,3 +32,6 @@ RUN echo "alias r2i='ros2 info'" >> /root/.zshrc
 RUN echo "alias rb='rm -rf build install log'" >> /root/.zshrc
 RUN echo "alias cb='colcon build --symlink-install'" >> /root/.zshrc
 RUN echo "alias si='source install/setup.zsh'" >> /root/.zshrc
+RUN echo "alias r2sl='ros2 service list'" >> /root/.zshrc
+RUN echo "alias r2st='ros2 service type'" >> /root/.zshrc
+RUN echo "alias r2sr='ros2 service call'" >> /root/.zshrc
